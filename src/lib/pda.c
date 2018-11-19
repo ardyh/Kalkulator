@@ -2,11 +2,12 @@
 
 float StringToFloat(char *s){
 	float result = 0;
+	float Sign = 1;
 	float SignDec = 1;
 
 	if(*s == '-'){//menangani bilangan negatif
 		s++;
-		SignDec = -1;
+		Sign = -1;
 	}
 
 	boolean point = false;
@@ -28,7 +29,7 @@ float StringToFloat(char *s){
 		}
 
 	}
-	return result / SignDec;
+	return (result * Sign)/ SignDec;
 }
 
 void Transition(int *State, char Symbol, Stack *S,boolean *stuck){
